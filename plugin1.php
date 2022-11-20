@@ -38,5 +38,11 @@ function plugin1_load_textdomain() {
 add_action( 'plugins_loaded', 'plugin1_load_textdomain' );
 
 function plugin_is_loaded() {
-    echo "Plugin is loaded";
+    if ( loaded() == true ) {
+        return "Plugin is successfully loaded";
+    }
+    return false;
+}
+function loaded() {
+    return true;
 }
